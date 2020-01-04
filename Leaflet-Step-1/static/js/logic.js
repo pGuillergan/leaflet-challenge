@@ -1,125 +1,19 @@
 const API_KEY = "pk.eyJ1IjoicGd1aWxsZXJnYW4iLCJhIjoiY2s0OWIyYXZ4MDNieTNucmlkandtZmR2YyJ9.QOfRLdh6TPZbNZ_49_8IwA";
 
-var streets = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
+var myMap = L.map("map", {
+  center: [37.0902, -95.7129],
+  zoom: 5,
+});
+
+L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
   maxZoom: 18,
   id: "mapbox.streets",
   accessToken: API_KEY
-});
+}).addTo(myMap);
 
-var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.light",
-  accessToken: API_KEY
-});
 
-var dark = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.dark",
-  accessToken: API_KEY
-});
 
-var satellite = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.streets-satellite",
-  accessToken: API_KEY
-});
-
-var outdoors = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.outdoors",
-  accessToken: API_KEY
-});
-
-var wheatpaste = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.wheatpaste",
-  accessToken: API_KEY
-});
-
-var comic = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.comic",
-  accessToken: API_KEY
-});
-
-var pencil = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.pencil",
-  accessToken: API_KEY
-});
-
-var pirates = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.pirates",
-  accessToken: API_KEY
-});
-
-var emerald = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.emerald",
-  accessToken: API_KEY
-});
-
-var contrast = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
-  attribution: "Map data &copy; <a href='https://www.openstreetmap.org/'>OpenStreetMap</a> contributors, <a href='https://creativecommons.org/licenses/by-sa/2.0/'>CC-BY-SA</a>, Imagery © <a href='https://www.mapbox.com/'>Mapbox</a>",
-  maxZoom: 18,
-  id: "mapbox.high-contrast",
-  accessToken: API_KEY
-});
-
-var myMap = L.map("map", {
-  center: [37.0902, -95.7129],
-  zoom: 5,
-  layers: 
-  	[streets, 
-  		light, 
-  		dark, 
-  		satellite, 
-  		outdoors, 
-  		wheatpaste, 
-  		comic, 
-  		pencil, 
-  		pirates, 
-  		emerald, 
-  		contrast]
-});
-
-streets.addTo(myMap);
-
-var tectonicplates = new L.LayerGroup();
-var earthquakes = new L.LayerGroup();
-
-var baseMaps = {
-  Light: light, 
-  Dark: dark,
-  Satellite: satellite,
-  Outdoors: outdoors,
-  "Wheat paste": wheatpaste,
-  Comic: comic,
-  Pencil: pencil,
-  Pirates: pirates,
-  Emerald: emerald,
-  "High Contrast": contrast,
-  Streets: streets
-};
-
-var overlays = {
-  "Tectonic Plates": tectonicplates,
-  Earthquakes: earthquakes
-};
-
-L.control.layers(baseMaps, overlays, 
-	{position: "topleft", collapsed: false}).addTo(myMap);
 
 function getColor(magnitude) {
     switch (true) {
@@ -168,7 +62,7 @@ d3.json(json_link, function(data) {
       	onEachFeature: function(feature, layer) {
       		layer.bindPopup("Magnitude: " + feature.properties.mag + "<br>Location: " + feature.properties.place);
     	}
-  	}).addTo(earthquakes);
+  	}).addTo(myMap);
 
   	var legend = L.control({
     	position: "topleft"
@@ -197,13 +91,4 @@ d3.json(json_link, function(data) {
   	};
   	legend.addTo(myMap);
 
-  	var tec_link = "https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json"
-  	d3.json(tec_link,
-    function(platedata) {
-      L.geoJson(platedata, {
-        color: "yellow",
-        weight: 2
-      }).addTo(tectonicplates);
-      tectonicplates.addTo(myMap);
-    });
 })
